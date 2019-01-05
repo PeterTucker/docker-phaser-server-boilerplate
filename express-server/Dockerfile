@@ -2,7 +2,7 @@ FROM node:latest
 
 MAINTAINER Peter Tucker "peter@gomvdesigns.com"
 LABEL version="1.0.0"
-LABEL description="RPG Trainer Docker Project"
+LABEL description="Docker Phaser Dev Server Boilerplate"
 
 RUN npm install nodemon -g
 

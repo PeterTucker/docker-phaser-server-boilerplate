@@ -1,6 +1,6 @@
 version: '3.2'
 services: 
-  rpg-trainer-express-server:
+  phaser-boilerplate-express-server:
     build: ./express-server
     command: >
       bash -c " npm run installSASS && #This line is needed to build SASS. See corresponding script line in package.json.
@@ -14,15 +14,15 @@ services:
     ports:
       - "${EXPRESS_SERVER_PORT}:${EXPRESS_SERVER_PORT}" #host:container
     links:
-      - rpg-trainer-mongodb
+      - phaser-boilerplate-mongodb
     depends_on:
-      - rpg-trainer-mongodb
+      - phaser-boilerplate-mongodb
     env_file:
      - ./.env
 
-  rpg-trainer-mongodb:
+  phaser-boilerplate-mongodb:
     image: mongo:latest
-    container_name: "rpg-trainer-mongodb"
+    container_name: "phaser-boilerplate-mongodb"
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
